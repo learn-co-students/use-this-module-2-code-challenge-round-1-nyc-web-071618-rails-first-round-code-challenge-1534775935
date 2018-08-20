@@ -1,0 +1,6 @@
+<h1>Power:<%=@power.name%></h1>
+<h1>Description:<%=@power.description%></h1>
+<h1>Super Heros w/ Power:<%@power.heroines.each do |hero| %>
+  <li> <%= link_to hero.name, (hero) %>  <br> </li>
+  <%end%>
+</h1>
