@@ -1,5 +1,14 @@
 <center>
   <h1>Create Heroine:</h1>
+
+  <b>
+    <%if @heroine.errors.any?%>
+      <%@heroine.errors.full_messages.each do |msg|%>
+        <%=msg%><br>
+      <%end%>
+    <%end%>
+  <b><br>
+
   <%= form_for @heroine do |f| %>
 
     <%= f.label :name %>
