@@ -1,10 +1,24 @@
 <h2>All Heroines</h2>
 
+<%= form_tag("/search", method: "get") do %>
+    <%= label_tag(:q, "Search For:") %>
+    <%= text_field_tag(:q) %>
+    <%= submit_tag "Search" %>
+<% end %>
+
+<!-- I'm not able to get the search functionality to work.
+I feel like I'm close because I can see my params
+using a byebug and the data is being filtered how
+I'd like. I think my problem is in receiving the
+user input. -->
+
 <ul>
   <% @heroines.each do |heroine| %>
     <li>
-      <%= heroine.super_name %>
+      <%= link_to heroine.super_name, heroine_path(heroine) %>
     </li>
     <br>
   <% end %>
 </ul>
+
+<%= link_to "Create a Heroine!", new_heroine_path %>
