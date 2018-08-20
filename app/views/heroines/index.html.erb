@@ -1,10 +1,24 @@
 <h2>All Heroines</h2>
 
+<!-- This is my attempt to apply the filter. Given more time, I would have tested each part of the loops below in the console, because I was getting an error when I tried running this code.
+<%#= form_tag '', :method => :get do %>
+ <%# Heroine.all.each do |heroine| %>
+   <%# heroine.power_id.each do |power_id| %>
+    <%# power = Power.find(power_id).name %>
+  <%#= text_field_tag :power %>
+  <%# end %>
+  <%# end %>
+  <%#= submit_tag 'Filter' %>
+<%# end %> -->
+
+
+
 <ul>
   <% @heroines.each do |heroine| %>
     <li>
-      <%= heroine.super_name %>
+      <%= link_to heroine.super_name, heroine_path(heroine.id) %>
     </li>
     <br>
   <% end %>
 </ul>
+<h3><%= link_to "Add A New Heroine", new_heroine_path %>
