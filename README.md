@@ -22,6 +22,11 @@ Luckily, another developer has already started the job. We have a model for hero
 
 We have several different powers and each can be bestowed upon **more than one heroine**. Each heroine can only have **one power**.
 
+#heroine belongs to power
+# power has many heroines
+#
+
+
 ## Instructions / Deliverables
 
 Read through the instructions to get a sense of the scope of this code challenge, and then tackle them one by one.
@@ -30,11 +35,26 @@ Read through the instructions to get a sense of the scope of this code challenge
 
 1. Create the associations between models. You may have to alter the current schema to get your code working. If you've set up your relationships properly, you should be able to run `rake db:seed` without errors, and confirm in console that the heroines and powers have been created with the proper relations.
 
+#made a new migration, migrated, checked my schema, seeded database, i can call power.all and heroine.all and see that im getting everything correct. I can go to /powers and /heroines and see everything! yay!
+#done
+
 2. On the heroines index page, a heroine's name should link to the heroine's show page.
 
+#create link to on index page
+#make show.html.erb
+#make show action on heroin controller
+#DONE AND TESTED :)
+
 3. The heroine show page should include the heroine's name (eg. Kamala Khan), her super name (eg. Ms. Marvel), and her power. The power should link to the power show page.  
+#make atheroine.name
+#make atheroine.supername
+#make atheroine.power
+#JUST NEED POWER
+
+<p>Special Power: <%= link_to @heroine.power.name, power_path(@power) %></p>
 
 4. The power show page should have its name and description.
+#done
 
 5. As a visitor to the website, I should be able to create a new heroine with her name and super name.
 
@@ -50,6 +70,9 @@ Read through the instructions to get a sense of the scope of this code challenge
 
 ![Searching on the heroines route and finding heroines by a power](search_by_power.gif)
 
+NEED TO DO
+-ADD POWER TO HEROIN SHOW PAGE
+-ADD NEW FORM WITH COLLECTION SELECT WITH ERRORS
 
 ### Hints / Tips
 + Draw your domain model and associations before you begin. You may have to alter the current schema to get your code working.
