@@ -3,8 +3,16 @@
 <ul>
   <% @heroines.each do |heroine| %>
     <li>
-      <%= heroine.super_name %>
+      <%= link_to heroine.super_name, heroine_path(heroine) %>
     </li>
     <br>
   <% end %>
 </ul>
+
+
+
+<%= form_tag("/powers", method: "get") do %>
+  <%= label_tag(:powers_path, "Search for powers:") %>
+  <%= text_field_tag(:powers_path) %>
+  <%= submit_tag("Search") %>
+<% end %>
