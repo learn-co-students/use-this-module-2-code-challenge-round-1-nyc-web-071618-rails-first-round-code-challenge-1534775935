@@ -1,0 +1,5 @@
+<h2><%= @heroine.super_name %>'s Page</h2>
+
+My "real" name is: <%= @heroine.name %>.<br><br>
+
+My superpower is: <%= link_to @heroine.power.name, power_path(@heroine.power) %>

@@ -1,0 +1,9 @@
+<h2>Let's create a new heroine!</h2>
+
+<%= form_for @heroine do |f| %>
+  My real name is: <%= f.text_field :name %><br><br>
+  My superhero name is: <%= f.text_field :super_name %><br><br>
+  My super power is: <%= f.collection_select :power_id, Power.all, :id, :name %><br><br>
+  <%= f.submit %>
+
+<% end %>
