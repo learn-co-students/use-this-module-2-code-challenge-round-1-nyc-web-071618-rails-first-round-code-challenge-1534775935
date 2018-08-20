@@ -8,7 +8,7 @@ powers = [
   {name:"elasticity", description: "can stretch the human body to extreme lengths" }
 ]
 
-powers.each {|power| Power.create(power)}
+powers.each {|power| Power.create!(power)}
 
 heroines = [
   {name: "Kamala Khan", super_name: "Ms. Marvel"},
@@ -33,4 +33,4 @@ heroines = [
 heroines = heroines.map { |heroine| heroine.merge( { power_id: Power.all.sample.id } ) }
 # ---------------
 
-heroines.each { |heroine| Heroine.create(heroine) }
+heroines.each { |heroine| Heroine.create!(heroine) }
